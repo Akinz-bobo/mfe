@@ -1,5 +1,4 @@
 const { merge } = require("webpack-merge"); // use to merge two different webpack files together
-const HtmlWebpackPlugin = require("html-webpack-plugin"); // takes the html files inside of our project and inject the script tags into it
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
 const packageJson = require('../package.json')
 
@@ -20,9 +19,6 @@ const devConfig = {
             },
             shared: packageJson.dependencies,
         }),
-        new HtmlWebpackPlugin({
-            template: "public/index.html",
-        })
     ]
 }
 
